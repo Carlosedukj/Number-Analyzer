@@ -16,7 +16,7 @@ body {
 }
 
 .container {
-    background-color: #980c0c;
+    background-color: #000080;
     padding: 50px;
     width: 500px;
 
@@ -31,9 +31,12 @@ body {
 h1 {
     text-align: center;
     margin-bottom: 20px;
+    color: #000;
+   
 }
 
 h3 {
+    color: white;
     font-size: 25px;
 }
 
@@ -45,6 +48,11 @@ input {
     border-radius: 5px;
 }
 
+input:focus {
+    outline: none;
+    border: 2px solid #170b59;
+}
+
 button {
     padding: 17px;
     font-size: 18px;
@@ -53,7 +61,7 @@ button {
     border: none;
     border-radius: 5px;
 
-    background-color: #007bff;
+    background-color: #589be2;
     color: white;
     cursor: pointer;
 
@@ -63,8 +71,13 @@ button {
 button:hover {
     background-color: #0056b3;
 }
+button:active {
+    background-color: #0056b3;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
 
 #result {
     margin-top: 10px;
-    font-size: 16px;
+    font-size: 18px;
+    color: white;
 }

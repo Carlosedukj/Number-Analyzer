@@ -7,12 +7,39 @@ const input = document.getElementById("numbersInput");
 // Seleciona a div onde o resultado será exibido
 const result = document.getElementById("result");
 
+// Evento para esconder o resultado quando o input estiver vazio.
+input.addEventListener("input", function (){
+
+    // Se o input estiver vazio, limpa o resultado da tela.
+    if(input.value.trim() === "") {
+        result.innerHTML = "";
+    }
+});
+
 
 // Quando o botão for clicado, execute a função.
 button.addEventListener("click", function() {
 
-    // Pega o valor digitado dentro do input
-    const value = input.value;
+    const value = input.value.trim(); // Remove espaços extras.
+
+    // Quando o campo estiver vazio.
+    if(value === "") {
+        result.innerHTML = "<p style='color: #ff0000; font-weight: 450; font-size: 18px;'>Digite algum valor.</p>";
+        return; // Interrompe a execução.
+    }
+
+    // Validando apenas vírgula.
+    if (value === "," || value === ",," || value.replace(/,/g, "") === "") {
+        result.innerHTML = "<p style='color: #ff0000; font-weight: 450; font-size: 18px;'>Digite número e vírgula.</p>"
+        return;
+    }
+
+    // Validando números e vírgula
+    const regex = /^[0-9,]+$/;
+    if(!regex.test(value)) {
+        result.innerHTML = "<p style='color:#ff0000; font-weight: 450; font-size: 18px;'>Digite apenas números e vírgula.</p>";
+        return;
+    }
 
     // Divide a string(texto) em array usando vírgula.
     const arrayString = value.split(",");
