@@ -1,6 +1,6 @@
-# 📊 NumberAnalyzer
+# 📊 Number Analyzer
 
-NumberAnalyzer é uma aplicação web simples que permite ao usuário inserir números separados por vírgula e obter automaticamente os seus valores como:
+Number Analyzer é uma aplicação web simples que permite ao usuário inserir números separados por vírgula e obter automaticamente os seus valores como:
 
 - Soma total
 - Média
